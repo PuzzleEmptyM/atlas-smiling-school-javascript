@@ -16,19 +16,19 @@ $(document).ready(function() {
     type: 'GET', // Specify the request method
     url: 'https://smileschool-api.hbtn.info/quotes', // API endpoint URL
     success: function(data) {
-      // Delay execution of the following code by 3 seconds (3000 milliseconds)
+      // Delay execution of following code by 3 seconds (3000 milliseconds)
       setTimeout(function() {
-        // Hide the loader after the delay
+        // Hide loader after the delay
         loader.hide();
-        // Show the navigation arrows
+        // Show navigation arrows
         backArrow.show();
         nextArrow.show();
     
-        // Iterate over each item in the fetched data
+        // Iterate over each item in fetched data
         data.forEach(function(element, idx) {
           var activeStatus = (idx == 0) ? "active" : ""; // First item is 'active'
     
-          // Construct the carousel item's HTML structure
+          // Construct carousel item's HTML structure
           var carouselItem = `
           <div class="carousel-item ${activeStatus}">
             <div class="row mx-auto align-items-center">
@@ -45,7 +45,7 @@ $(document).ready(function() {
             </div>
           </div>`;
     
-          // Append the constructed carousel item to the carousel container
+          // Append constructed carousel item to carousel container
           carouselContainer.append(carouselItem);
         });
       }, 1500); // End of setTimeout
