@@ -55,4 +55,86 @@ $(document).ready(function() {
       console.log("Error fetching API");
     }
   })
+
+function ratingCount(stars) {
+  var star = `<img src="images/star_on.png" alt="star on" width="15px"/>`
+  var noStar = `<img src="images/star_off.png" alt="star off" width="15px"/>`
+  var rating = '';
+  var i = 0
+  for (i; i < stars; i++) {
+    rating += star;
+  }
+  for (i; i < 5; i++) {
+    rating += noStar
+  }
+  return rating;
+}
+
+var carouselVideoContainer = $('#video_inner');
+setTimeout(() => {
+  $.ajax({
+    type: 'GET',
+    url: 'https://smileschool-api.hbtn.info/popular-tutorials',
+    success: function(data) {
+      console.log("Data received:", data);
+      
+      data.forEach(function(element, idx) {
+        // Each card is now its own carousel item
+        var carouselItem = $('<div class="carousel-item"></div>');
+        if (idx === 0) carouselItem.addClass('active'); // First item should be active
+        
+        // Create the individual video item
+        var videoItem = `
+        <div class="col-md-3">
+          <div class="card">
+            <img
+                src="${element.thumb_url}"
+                class="card-img-top"
+                alt="Video thumbnail"
+              />
+            <div class="card-img-overlay text-center">
+              <img
+                src="images/play.png"
+                alt="Play"
+                width="64px"
+                class="align-self-center play-overlay"
+              />
+            </div>
+            <div class="card-body">
+              <h5 class="card-title font-weight-bold">${element.title}</h5>
+              <p class="card-text text-muted">${element['sub-title']}</p>
+              <div class="creator d-flex align-items-center">
+                <img
+                  src="${element.author_pic_url}"
+                  alt="Creator of
+                  Video"
+                  width="30px"
+                  class="rounded-circle"
+                />
+                <h6 class="pl-3 m-0 main-color">${element.author}</h6>
+              </div>
+              <div class="info pt-3 d-flex justify-content-between">
+                <div class="rating">
+                  ${ratingCount(element.star)}
+              </div>
+              <span class="main-color">${element.duration}</span>
+            </div>
+          </div>
+        </div>`;
+        // Append the video item to the carousel item
+        carouselItem.html(videoItem);
+        // Append the carousel item to the carousel container
+        carouselVideoContainer.append(carouselItem);
+      });
+
+      // After adding items, reinitialize the carousel to work with dynamic content
+      $('#carouselExampleControls2').carousel({
+        interval: false
+      });
+    },
+    error: function(error) {
+      console.log("Could not fetch API");
+    }
+  });
+}, 1500);
 });
