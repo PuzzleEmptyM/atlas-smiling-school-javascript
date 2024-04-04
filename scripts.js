@@ -3,9 +3,8 @@ $(document).ready(function() {
   var carouselCommentsContainer = $('#comments-inner');
   var nextArrow = $('.carousel-control-next');
   var backArrow = $('.carousel-control-prev');
-  var coursesVideos = $('#coursesVideos');
   backArrow.hide();
-  nextArrow.hide()
+  nextArrow.hide();
   function getCommentsAPI() {
     setTimeout(() => {
       $.ajax({
@@ -230,6 +229,62 @@ $(document).ready(function() {
     }, 1500);
   }
 
+  function fetchCourses(searchValue = '', topicValue = 'all', sortValue = 'most_popular') {
+    // Add the loader while fetching the data
+    $('.results .row').html('<div class="loader"></div>');
+  
+    $.ajax({
+      type: 'GET',
+      url: 'https://smileschool-api.hbtn.info/courses',
+      data: {
+        q: searchValue,
+        topic: topicValue,
+        sort: sortValue
+      },
+      success: function(data) {
+        // Remove the loader
+        $('.loader').remove();
+        // Call the function to update the UI with the fetched courses
+        updateCoursesUI(data.courses);
+      },
+      error: function(error) {
+        console.error("Couldn't fetch courses", error);
+      }
+    });
+  }
+  
+  function updateCoursesUI(courses) {
+    // Update the UI with the courses data
+    // Similar to what you did with `getVideosAPI` and `getLatestVideosAPI`
+    // Make sure to update the .results .row with the new content
+    // And update the video-count with the number of videos
+  }
+  
+
+  // Search input event listener
+$('.search-text-area').on('input', function() {
+  var searchValue = $(this).val();
+  var topicValue = $('.dropdown.topic .dropdown-toggle span').text().toLowerCase();
+  var sortValue = $('.dropdown.sort .dropdown-toggle span').text().toLowerCase().replace(' ', '_');
+  fetchCourses(searchValue, topicValue, sortValue);
+});
+
+// Topic dropdown event listener
+$('.dropdown.topic .dropdown-menu a').on('click', function() {
+  var topicValue = $(this).text().toLowerCase();
+  var searchValue = $('.search-text-area').val();
+  var sortValue = $('.dropdown.sort .dropdown-toggle span').text().toLowerCase().replace(' ', '_');
+  fetchCourses(searchValue, topicValue, sortValue);
+});
+
+// Sort dropdown event listener
+$('.dropdown.sort .dropdown-menu a').on('click', function() {
+  var sortValue = $(this).text().toLowerCase().replace(' ', '_');
+  var topicValue = $('.dropdown.topic .dropdown-toggle span').text().toLowerCase();
+  var searchValue = $('.search-text-area').val();
+  fetchCourses(searchValue, topicValue, sortValue);
+});
+
 
   var currentPage = window.location.pathname;
 
@@ -239,5 +294,7 @@ $(document).ready(function() {
     getLatestVideosAPI();
   } else if (currentPage.includes('pricing.html')) {
     getCommentsAPI();
+  } else if (currentPage.includes('courses.html')) {
+    fetchCourses();
   }
 });
