@@ -40,7 +40,7 @@
 
 /* Header / Hero Styles */
 .header {
-  background-image: url("images/pic_1.jpg");
+  background-image: url("/atlas-smiling-school-javascript/images/pic_1.jpg");
   background-color: var(--background-color);
   max-width: 100%;
   height: auto;
@@ -314,7 +314,7 @@
 
 /* PRICING */
 .pricing-header {
-  background-image: url(images/pic_2.jpg);
+  background-image: url(/atlas-smiling-school-javascript/images/pic_2.jpg);
 }
 
 .pricing-header h1,
@@ -402,7 +402,7 @@
 
 /* COURSES */
 .courses-header {
-  background-image: url(images/pic_3.jpg);
+  background-image: url(/atlas-smiling-school-javascript/images/pic_3.jpg);
   background-size: cover;
   background-position-y: -100px;
 }
@@ -552,11 +552,11 @@
 }
 
 .slick-next.slick-arrow {
-  background: url(images/arrow_black_right.png) no-repeat !important;
+  background: url(/atlas-smiling-school-javascript/images/arrow_black_right.png) no-repeat !important;
 }
 
 .slick-prev.slick-arrow {
-  background: url(images/arrow_black_left.png) no-repeat !important;
+  background: url(/atlas-smiling-school-javascript/images/arrow_black_left.png) no-repeat !important;
 }
 
 .slick-next.slick-arrow:hover, .slick-prev.slick-arrow:hover {
