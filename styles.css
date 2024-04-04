@@ -312,6 +312,94 @@
   padding-bottom: 39px;
 }
 
+/* PRICING */
+.pricing-header {
+  background-image: url(images/pic_2.jpg);
+}
+
+.pricing-header h1,
+.pricing-header h2 {
+  font-size: 2rem;
+  line-height: 40px;
+}
+
+.pricing-header h2 {
+  padding-top: 75px;
+  padding-bottom: 55px;
+  font-size: 60px;
+}
+
+.pricing-header .hero .smile-fig {
+  max-width: 37px;
+}
+
+.pricing-header .title-fig {
+  width: 200px;
+}
+
+/* PRICING GRID */
+.prices-grid {
+  padding-bottom: 38px;
+}
+
+.prices-grid .plan button,
+.prices-grid .plan h3,
+.prices-grid .plan span {
+  font-size: 14px;
+  font-weight: 600;
+  width: 162px;
+  height: 44px;
+}
+
+.prices-grid .table {
+  table-layout: fixed;
+  margin-bottom: 0;
+}
+
+.prices-grid .check-icon {
+  font-size: 28px;
+  color: var(--check-color);
+}
+
+.prices-grid .signal-logo {
+  padding: 10px 0 5px 0;
+}
+
+.prices-grid .row {
+  margin-bottom: 62px;
+}
+
+/* FAQ SECTION */
+.faq .section-header h2 {
+  margin-top: 74px;
+  font-size: 60px;
+  font-weight: 300;
+  color: var(--background-color);
+}
+
+.faq .question h3,
+.faq .question p {
+  font-size: 1rem;
+  line-height: 20px;
+  margin-bottom: 30px;
+  color: var(--background-color);
+}
+
+.faq .section-body {
+  margin-top: 74px;
+  margin-bottom: 127px;
+}
+
+.faq .section-body .row1 {
+  padding-bottom: 74px;
+}
+
+.faq .section-body .col1,
+.faq .section-body .col2 {
+  padding-right: var(--faq-pad-inner);
+  padding-left: var(--faq-pad-outer);
+}
+
 /* LOADER CSS */
 .loader {
   border: 10px solid #f3f3f3;
