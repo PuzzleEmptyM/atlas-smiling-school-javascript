@@ -400,6 +400,120 @@
   padding-left: var(--faq-pad-outer);
 }
 
+/* COURSES */
+.courses-header {
+  background-image: url(images/pic_3.jpg);
+  background-size: cover;
+  background-position-y: -100px;
+}
+
+.courses-header h1 {
+  font-size: 2rem;
+  font-family: var(--font-family-3);
+}
+
+.courses-header .hero {
+  margin-top: 37px;
+  padding-bottom: 51px;
+}
+
+/* SEARCH SECTION */
+.search {
+  background-color: var(--main-color);
+  height: auto;
+}
+
+.search .input-group {
+  height: 48px;
+  border: 0px;
+}
+
+.search .input-group-prepend {
+  margin-right: 0px;
+}
+
+.search .input-group-text {
+  background-color: var(--color-white);
+  border-right: 0;
+  padding-right: 10px;
+  border-style: none;
+  border-radius: 3px 3px 0px 0px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.25);
+  color: var(--color-white);
+  font-size: 20px;
+}
+
+.search .form-control.search-text-area {
+  height: 100%;
+  border-style: none;
+  border-radius: 3px 3px 0px 0px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.25);
+  mix-blend-mode: normal;
+  border-left: 0;
+  color: var(--color-white);
+}
+
+.search .form-control.search-text-area::placeholder {
+  color: var(--color-white);
+  opacity: 0.5;
+  font-weight: 300;
+  font-size: 23px;
+  transform: translateY(2px);
+}
+
+.search .form-control.search-text-area:focus {
+  box-shadow: none;
+}
+
+.search .dropdown .btn {
+  width: 100%;
+  border-radius: 3px 3px 0px 0px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.25);
+  mix-blend-mode: normal;
+}
+
+.search .dropdown .btn span {
+  color: var(--color-white);
+  font-weight: 300;
+  font-size: 23px;
+}
+
+.search .dropdown .btn:after {
+  color: var(--color-white);
+  right: 12px;
+  top: 50%;
+  position: absolute;
+}
+
+.search .btn.focus,
+.btn:focus {
+  box-shadow: none !important;
+}
+
+.search .dropdown-menu {
+  width: 100%;
+}
+
+.search .dropdown-menu .dropdown-item:hover {
+  color: var(--main-color);
+  background-color: white;
+}
+
+/* RESULTS SECTION */
+.results .section-title {
+  font-size: 16px;
+  line-height: 20px;
+  margin-bottom: 29px;
+}
+
+.results .container {
+  margin-top: 47px;
+  margin-bottom: 37px;
+}
+
 /* LOADER CSS */
 .loader {
   border: 10px solid #f3f3f3;
