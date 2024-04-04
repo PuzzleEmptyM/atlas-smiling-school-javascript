@@ -237,5 +237,7 @@ $(document).ready(function() {
     getCommentsAPI();
     getVideosAPI();
     getLatestVideosAPI();
+  } else if (currentPage.includes('pricing.html')) {
+    getCommentsAPI();
   }
 });
